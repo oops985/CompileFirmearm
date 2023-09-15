@@ -4,7 +4,7 @@
 #sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 
 #修改主机名
-#sed -i 's/OpenWrt/Xiaomi-Router/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/Xiaomi-Router/g' package/base-files/files/bin/config_generate
 
 #修改型号显示
 #sed -i 's/Xiaomi Mi Router 4A Gigabit Edition/Xiaomi 4A Gigabit/g' target/linux/ramips/dts/mt7621_xiaomi_mi-router-4a-gigabit.dts
@@ -32,6 +32,9 @@ cp $(dirname $0)/uci-scripts/* files/etc/uci-defaults/
 #sed -i 's/OpenWrt/coolxiaomi/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i 's/wireless.default_radio${devidx}.encryption=none/wireless.default_radio${devidx}.encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i '/encryption/a\set wireless.default_radio${devidx}.key=coolxiaomi' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+#修改登录密码为PASSword
+sed -i '/root/croot:$1$YXSLkZ0u$wtWptMmOAXI3i6nZ4kPVa1:19232:0:99999:7:::' package/base-files/files/etc/shadow
 
 #修改登录密码为coolxiaomi
 #sed -i '/root/croot:$1$CBd7u73H$LvSDVXLBrzpk4JfuuN.Lv1:18676:0:99999:7:::' package/base-files/files/etc/shadow
