@@ -44,4 +44,4 @@ ZZZ_PATH=package/default-settings/files/zzz-default-settings
 sed -i -e '/DISTRIB_/d' -e '/footer.htm/d' -e '/admin_status/d' $ZZZ_PATH
 
 #替换geodata源
-. extra-files/update-geodata.sh
+#. extra-files/update-geodata.sh
